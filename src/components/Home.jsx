@@ -2,16 +2,18 @@ import React, { useContext, useState } from "react";
 import AppContext from "../context/App_Context";
 
 const Home = () => {
-  const { material, filtered, setSelectedOption, selectedOption } =
+  const { material, filtered, setSelectedOption, selectedOption,setInput } =
     useContext(AppContext);
+    
 
   const handleChange = (e) => {
     setSelectedOption(e.target.value);
   };
   return (
     <>
-      <div>
+      <div >
         {/* Dropdown to filter subjects */}
+        <div className="flex justify-center gap-3 mt-[110px]">
         <div className="filter flex justify-center ">
           {material.length > 0 && (
             <select
@@ -35,6 +37,10 @@ const Home = () => {
               ))}
             </select>
           )}
+        </div>
+        <div>
+        <input type="search" className="w-[320px] rounded px-2 py-3 mt-2" onChange={(e)=>setInput(e.target.value)} required placeholder="Search" />
+        </div>
         </div>
 
         {/* Display PDF files */}

@@ -27,11 +27,15 @@ const App_State = (props) => {
         fetchMaterials()
     },[])
 
-   
+   const sendMessage = async(formdata) =>{
+      await axios.post('https://mca-doc-server.onrender.com/api/user/send',formdata)
+      // await axios.post('http://localhost:5000/api/user/send',formdata)
+      
+   }
     
 
   return (
-    <AppContext.Provider value={{material,filtered,setInput,setSelectedOption}}>{props.children}</AppContext.Provider>
+    <AppContext.Provider value={{material,filtered,setInput,setSelectedOption,sendMessage}}>{props.children}</AppContext.Provider>
   )
 }
 

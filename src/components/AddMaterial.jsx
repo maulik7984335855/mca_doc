@@ -48,7 +48,7 @@ const AddMaterial = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full gap-3">
+      <div className="flex flex-col mt-[110px] items-center justify-center h-full gap-3">
         <div>
           <input
             type="file"
