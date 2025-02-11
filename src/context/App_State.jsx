@@ -7,7 +7,7 @@ const App_State = (props) => {
     const [input,setInput] = useState("")
     const [selectedOption,setSelectedOption] = useState("")
     // console.log(input);
-      console.log(selectedOption);
+      // console.log(selectedOption);
     // console.log(filtered);
     let filtered = material.filter((data)=>(
         data.subjectName.toLowerCase().includes(input.toLowerCase()) &&
@@ -25,7 +25,7 @@ const App_State = (props) => {
             .catch(err => console.log(err))
         }
         fetchMaterials()
-    },[])
+    },[setMaterial,material])
 
    const sendMessage = async(formdata) =>{
       await axios.post('https://mca-doc-server.onrender.com/api/user/send',formdata)

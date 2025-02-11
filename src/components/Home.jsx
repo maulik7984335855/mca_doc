@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/App_Context";
-
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Home = () => {
   const { material, filtered, setSelectedOption, selectedOption,setInput } =
     useContext(AppContext);
@@ -11,9 +12,9 @@ const Home = () => {
   };
   return (
     <>
-      <div >
+      <div className="mb-10">
         {/* Dropdown to filter subjects */}
-        <div className="flex justify-center gap-3 mt-[110px]">
+        <div className="flex justify-center items-center lg:flex-row flex-col gap-3 mt-[110px]">
         <div className="filter flex justify-center ">
           {material.length > 0 && (
             <select
@@ -63,7 +64,7 @@ const Home = () => {
                 </div>
 
                 {/* Download Button */}
-                <div className="mt-4 text-center">
+                <div className="mt-4 text-center flex gap-2">
                   <a
                     href={data.subjectMaterial}
                     download
@@ -71,6 +72,9 @@ const Home = () => {
                   >
                     Download PDF
                   </a>
+                  <Link to={`/edit/${data._id}`} className="bg-blue-500 text-white px-3 py-2 rounded">
+                    <FaRegEdit />
+                  </Link>
                 </div>
               </div>
             ))
