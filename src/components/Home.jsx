@@ -3,7 +3,7 @@ import AppContext from "../context/App_Context";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Home = () => {
-  const { material, filtered, setSelectedOption, selectedOption,setInput } =
+  const { material, filtered, setSelectedOption, selectedOption,setInput,theme } =
     useContext(AppContext);
     
 
@@ -12,9 +12,9 @@ const Home = () => {
   };
   return (
     <>
-      <div className="mb-10">
+      <div className={`mb-10 pt-[110px]  ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
         {/* Dropdown to filter subjects */}
-        <div className="flex justify-center items-center lg:flex-row flex-col gap-3 mt-[110px]">
+        <div className={`flex justify-center items-center lg:flex-row flex-col gap-3  `}>
         <div className="filter flex justify-center ">
           {material.length > 0 && (
             <select

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios"; // Import Axios for API calls
+import AppContext from "../context/App_Context";
 
 const AddMaterial = () => {
   const [file, setFile] = useState(null);
   const [subjectName, setSubjectName] = useState("");
   const [subjectDesc, setSubjectDesc] = useState("");
   const [loading, setLoading] = useState(false);
+  const {theme} = useContext(AppContext)
 
   // Handle file selection
   const handleFileChange = (e) => {
@@ -48,7 +50,7 @@ const AddMaterial = () => {
 
   return (
     <>
-      <div className="flex flex-col mt-[110px] items-center justify-center h-full gap-3">
+      <div className={`flex flex-col pt-[110px] items-center justify-center h-screen gap-3 ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
         <div>
           <input
             type="file"

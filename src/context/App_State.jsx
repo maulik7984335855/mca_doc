@@ -6,11 +6,13 @@ const App_State = (props) => {
     const [material,setMaterial] = useState([])
     const [input,setInput] = useState("")
     const [selectedOption,setSelectedOption] = useState("")
+    const [theme,setTheme] = useState('dark' )
+    // console.log(theme);
     // console.log(input);
       // console.log(selectedOption);
     // console.log(filtered);
     let filtered = material.filter((data)=>(
-        data.subjectName.toLowerCase().includes(input.toLowerCase()) &&
+        data.description.toLowerCase().includes(input.toLowerCase()) &&
         (selectedOption === "" || data.subjectName === selectedOption)
     ))
 
@@ -35,7 +37,7 @@ const App_State = (props) => {
     
 
   return (
-    <AppContext.Provider value={{material,filtered,setInput,setSelectedOption,sendMessage}}>{props.children}</AppContext.Provider>
+    <AppContext.Provider value={{material,filtered,setInput,setSelectedOption,sendMessage,theme,setTheme}}>{props.children}</AppContext.Provider>
   )
 }
 

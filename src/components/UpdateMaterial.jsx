@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AppContext from "../context/App_Context";
 
 const UpdateMaterial = () => {
-  const { material } = useContext(AppContext);
+  const { material,theme } = useContext(AppContext);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -78,7 +78,7 @@ const UpdateMaterial = () => {
   };
 
   return (
-    <div className="flex flex-col mt-[110px] items-center justify-center h-full gap-3">
+    <div className={`flex flex-col pt-[110px] items-center justify-center min-h-screen gap-3 ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
       {/* File Upload Input */}
       <div className="flex flex-col items-center gap-2">
         <input

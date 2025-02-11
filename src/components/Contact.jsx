@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 const Contact = () => {
 
-  const {sendMessage} = useContext(AppContext)
+  const {sendMessage,theme} = useContext(AppContext)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,7 +58,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center  items-center min-h-screen">
+    <div className={`flex justify-center  items-center min-h-screen ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
       <form onSubmit={handleSubmit} className="border shadow-lg p-6 rounded-lg w-[320px]">
         <h2 className="text-xl font-bold text-center mb-4">Contact Us</h2>
 
