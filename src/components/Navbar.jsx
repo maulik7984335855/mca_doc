@@ -49,7 +49,7 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className={`menu menu-sm dropdown-content absolute mt-3 w-52 rounded-box p-2 shadow z-10 ${
-                theme ? "bg-base-100 text-white" : "bg-white text-black"
+                theme ? "bg-base-100 text-white"  : "bg-white text-black"
               } `}
             >
               <li>
@@ -73,12 +73,12 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center">
-          <a className="text-xl">Mca Docs</a>
+          <a className="lg:text-3xl text-xl font-bold">Mca Docs</a>
         </div>
 
         <div className="navbar-end">
           <button onClick={changeTheme} className="btn btn-ghost btn-circle">
-            {theme ? <MdDarkMode /> : <CiLight />}
+            {theme ? <MdDarkMode size={20} /> : <CiLight size={20} />}
           </button>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Home = () => {
   };
   return (
     <>
-      <div className={`mb-10 pt-[110px]  ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
+      <div className={`pb-10 pt-[110px]  ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
         {/* Dropdown to filter subjects */}
         <div className={`flex justify-center items-center lg:flex-row flex-col gap-3  `}>
         <div className="filter flex justify-center ">
