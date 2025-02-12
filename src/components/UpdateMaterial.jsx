@@ -85,7 +85,7 @@ const UpdateMaterial = () => {
           type="file"
           name="subjectMaterial"
           onChange={handleFileChange}
-          className="w-[250px] lg:w-[400px] px-2 py-2 rounded bg-gray-700 text-white"
+          className="w-[250px] lg:w-[400px] lowercase px-2 py-2 rounded bg-gray-700 text-white"
         />
 
         {/* Display the selected or existing file name */}
@@ -106,7 +106,7 @@ const UpdateMaterial = () => {
           type="text"
           value={updatedSubjectName}
           onChange={(e) => updatedSetSubjectName(e.target.value)}
-          className="w-[250px] lg:w-[400px] px-2 py-2 rounded border border-gray-400"
+          className="w-[250px] lowercase lg:w-[400px] px-2 py-2 rounded border border-gray-400"
           placeholder="Subject name e.g. Python"
         />
       </div>
@@ -117,7 +117,7 @@ const UpdateMaterial = () => {
           type="text"
           value={updatedSubjectDesc}
           onChange={(e) => updatedSetSubjectDesc(e.target.value)}
-          className="w-[250px] lg:w-[400px] px-2 py-2 rounded border border-gray-400"
+          className="w-[250px] lowercase lg:w-[400px] px-2 py-2 rounded border border-gray-400"
           placeholder="Subject Description e.g. Python Unit-1"
         />
       </div>

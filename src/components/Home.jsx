@@ -3,45 +3,61 @@ import AppContext from "../context/App_Context";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Home = () => {
-  const { material, filtered, setSelectedOption, selectedOption,setInput,theme } =
-    useContext(AppContext);
-    
+  const {
+    material,
+    filtered,
+    setSelectedOption,
+    selectedOption,
+    setInput,
+    theme,
+  } = useContext(AppContext);
+
+  let mySet = new Set(material.map((ele) => ele.subjectName));
+  let newArr = [...mySet];
 
   const handleChange = (e) => {
     setSelectedOption(e.target.value);
   };
   return (
     <>
-      <div className={`pb-10 pt-[110px]  ${theme ? "bg-base-100 text-white" : "bg-white text-black"}`}>
+      <div
+        className={`pb-10 pt-[110px] min-h-screen  ${
+          theme ? "bg-base-100 text-white" : "bg-white text-black"
+        }`}
+      >
         {/* Dropdown to filter subjects */}
-        <div className={`flex justify-center items-center lg:flex-row flex-col gap-3  `}>
-        <div className="filter flex justify-center ">
-          {material.length > 0 && (
-            <select
-              onChange={handleChange}
-              value={selectedOption}
+        <div
+          className={`flex justify-center items-center lg:flex-row flex-col gap-3  `}
+        >
+          <div className="filter flex justify-center ">
+            {newArr.length > 0 && (
+              <select
+                onChange={handleChange}
+                value={selectedOption}
+                className="w-[320px] rounded px-2 py-3 mt-2"
+              >
+                <option className="text-black" value="">
+                  All
+                </option>
+                {newArr.map((data) => (
+                  <>
+                    <option value={data} key={data._id} className="text-black">
+                      {data}
+                    </option>
+                  </>
+                ))}
+              </select>
+            )}
+          </div>
+          <div>
+            <input
+              type="search"
               className="w-[320px] rounded px-2 py-3 mt-2"
-            >
-              <option className="text-black" value="">
-                All
-              </option>
-              {material.map((data) => (
-                <>
-                  <option
-                    value={data.subjectName}
-                    key={data._id}
-                    className="text-black"
-                  >
-                    {data.subjectName}
-                  </option>
-                </>
-              ))}
-            </select>
-          )}
-        </div>
-        <div>
-        <input type="search" className="w-[320px] rounded px-2 py-3 mt-2" onChange={(e)=>setInput(e.target.value)} required placeholder="Search" />
-        </div>
+              onChange={(e) => setInput(e.target.value)}
+              required
+              placeholder="Search"
+            />
+          </div>
         </div>
 
         {/* Display PDF files */}
@@ -72,7 +88,10 @@ const Home = () => {
                   >
                     Download PDF
                   </a>
-                  <Link to={`/edit/${data._id}`} className="bg-blue-500 text-white px-3 py-2 rounded">
+                  <Link
+                    to={`/edit/${data._id}`}
+                    className="bg-blue-500 text-white px-3 py-2 rounded"
+                  >
                     <FaRegEdit />
                   </Link>
                 </div>

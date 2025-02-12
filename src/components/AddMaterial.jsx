@@ -56,7 +56,7 @@ const AddMaterial = () => {
             type="file"
             // name="subjectMaterial"
             onChange={handleFileChange}
-            className=" w-[250px] lg:w-[400px] px-2 py-2 rounded bg-gray-700 text-white"
+            className=" w-[250px] lowercase lg:w-[400px] px-2 py-2 rounded bg-gray-700 text-white"
           />
         </div>
         <div>
@@ -64,7 +64,7 @@ const AddMaterial = () => {
             type="text"
             value={subjectName}
             onChange={(e) => setSubjectName(e.target.value)}
-            className="w-[250px] lg:w-[400px] px-2 py-2 rounded border border-gray-400"
+            className="w-[250px] lowercase lg:w-[400px] px-2 py-2 rounded border border-gray-400"
             placeholder="Subject name e.g. Python"
           />
         </div>
@@ -73,7 +73,7 @@ const AddMaterial = () => {
             type="text"
             value={subjectDesc}
             onChange={(e) => setSubjectDesc(e.target.value)}
-            className="w-[250px] lg:w-[400px] px-2 py-2 rounded border border-gray-400"
+            className="w-[250px] lowercase lg:w-[400px] px-2 py-2 rounded border border-gray-400"
             placeholder="Subject Description e.g. Python Unit-1"
           />
         </div>
