@@ -34,14 +34,14 @@ const Home = () => {
               <select
                 onChange={handleChange}
                 value={selectedOption}
-                className="w-[320px] rounded px-2 py-3 mt-2"
+                className="w-[320px] capitalize rounded px-2 py-3 mt-2"
               >
                 <option className="text-black" value="">
                   All
                 </option>
                 {newArr.map((data) => (
                   <>
-                    <option value={data} key={data._id} className="text-black">
+                    <option value={data} key={data._id} className="text-black capitalize">
                       {data}
                     </option>
                   </>
