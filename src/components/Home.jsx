@@ -66,7 +66,7 @@ const Home = () => {
             filtered.map((data) => (
               <div
                 key={data._id}
-                className="border rounded-lg p-4 w-[230px] shadow-lg"
+                className="border flex flex-col justify-between rounded-lg p-4 w-[230px] shadow-lg"
               >
                 <h3 className="text-lg font-semibold">{data.subjectName}</h3>
                 <p className="text-gray-600">{data.description}</p>
